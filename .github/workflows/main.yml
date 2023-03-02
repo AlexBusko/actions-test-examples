@@ -6,11 +6,14 @@ on:
       - master
 
 jobs:
-  create_rename_directory:
+  create_directory:
     runs-on: ubuntu-latest
     steps:
       - name: Create directory
         run: mkdir mydir
-
+  rename_directory:
+    runs-on: ubuntu-latest
+    needs: [create_directory]
+    steps: 
       - name: Rename directory to main
         run: mv mydir main
