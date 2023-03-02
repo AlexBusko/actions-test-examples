@@ -1,0 +1,13 @@
+name: Create and Rename Directory
+
+on: [push]
+
+jobs:
+  create_rename_directory:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create directory
+      run: mkdir mydir
+      
+    - name: Rename directory to main
+      run: mv mydir main
